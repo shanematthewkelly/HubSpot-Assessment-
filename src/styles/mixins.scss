@@ -1,0 +1,39 @@
+@import "./variables.scss";
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin circle-dimensions($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $quote;
+  border-radius: 80px;
+}
+
+@mixin dropdown-defaults($background, $width) {
+  background-color: $background;
+  width: $width;
+}
+
+@mixin text-defaults($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+  text-transform: uppercase;
+  font-weight: $font-weight;
+}
+
+@mixin mobile-column() {
+  @media all and (max-width: $md) {
+    flex-direction: column;
+  }
+}
+
+@mixin filter-common-flex($gap) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: $gap;
+}

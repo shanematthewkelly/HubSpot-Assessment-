@@ -1,0 +1,88 @@
+@import "./globals.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./movies.scss";
+
+// Testimonial Component
+#testimonial-block {
+  display: flex;
+  height: 100%;
+  width: 70%;
+  margin: auto;
+
+  @media all and (max-width: $md) {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .quotes-block {
+    @include flex-centered();
+    flex-direction: column;
+    flex-shrink: 0;
+
+    @media all and (max-width: $md) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    .circle {
+      @include circle-dimensions(40px, 40px);
+      @include flex-centered();
+
+      .fa-quote-left {
+        color: white;
+      }
+    }
+
+    .divider {
+      width: 3px;
+      margin-top: 3px;
+      height: 140px;
+      background-color: $quote;
+
+      @media all and (max-width: $md) {
+        height: 3px;
+        width: 80%;
+        margin-top: 0;
+        margin-left: 3px;
+      }
+    }
+
+    .circle-small {
+      @include circle-dimensions(10px, 10px);
+    }
+  }
+
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .positioned-text {
+      position: relative;
+      height: 100%;
+
+      span {
+        position: absolute;
+        bottom: 0;
+        font-weight: bold;
+
+        @media all and (max-width: $md) {
+          position: static;
+        }
+      }
+    }
+  }
+
+  .button-block {
+    @include flex-centered();
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+}

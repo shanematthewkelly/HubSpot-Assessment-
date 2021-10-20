@@ -1,0 +1,116 @@
+@import "./globals.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+
+#movies-layout {
+  height: 100%;
+  margin: 0 30px;
+  border: $border-props;
+
+  .filters {
+    padding: 0px 15px;
+    border-bottom: $border-props;
+    @include mobile-column();
+
+    .radios {
+      @include filter-common-flex(8px);
+      margin-top: 20px;
+    }
+
+    .filters-block {
+      @include mobile-column();
+      @include filter-common-flex(20px);
+
+      .dropdown-button {
+        @include dropdown-defaults($dropdown-bg, 160px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid lightgray;
+        padding: 0 15px;
+
+        p {
+          @include text-defaults($secondary-text, 16px);
+        }
+      }
+
+      .dropdown {
+        @include dropdown-defaults(white, 185px);
+        position: absolute;
+        margin-top: 10px;
+        z-index: 10;
+        border: $border-props;
+
+        p {
+          @include text-defaults($secondary-text, 16px);
+          margin-left: 20px;
+        }
+      }
+
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: $border-props;
+        padding: 0 15px;
+
+        &:hover {
+          background-color: $dropdown-bg;
+        }
+      }
+    }
+
+    .search-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      @media all and (max-width: $md) {
+        align-items: stretch;
+      }
+
+      .search-field {
+        height: 40px;
+      }
+
+      h1 {
+        @include text-defaults($primary, 18px);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .css-grid {
+    display: grid;
+    overflow: hidden;
+    padding: 30px 12px;
+    gap: 1.5rem;
+
+    @media all and (max-width: $md) {
+      display: block;
+    }
+  }
+
+  .grid-item {
+    height: 100%;
+    margin-bottom: 20px;
+
+    @media all and (max-width: $md) {
+      margin-bottom: 80px;
+    }
+
+    .movie-image {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-weight: $font-weight;
+    }
+  }
+}
