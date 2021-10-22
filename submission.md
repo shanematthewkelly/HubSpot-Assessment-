@@ -13,8 +13,6 @@ overall better user experience and flow.
 
 ## How did you deviate from the directions, if at all, and why?
 
-I feel as though the only thing that I may have went off course with was handling broken images and data manipulation from the API.
-I also added some DOM elements to the first exercise, as I did not understand how this would have been possible without at least
-adding an icon to the HTML. I could have utilised the ::before pseudo class to have elements appear before the testimonial, but nevertheless, this was the approach I took.
+I feel as though the only thing that I may have went off course with was handling broken images and data manipulation from the API. I also added some DOM elements to the first exercise, as I did not understand how this would have been possible without at least adding an icon to the HTML. I could have utilised the ::before pseudo class to have elements appear before the testimonial, but nevertheless, this was the approach I took. Looking back on it, a background-image could have also been utilised for the icon insteaf within the ::before.
 
 ## Is there anything else you'd like to let us know?
