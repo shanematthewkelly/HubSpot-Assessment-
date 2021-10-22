@@ -11,6 +11,7 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
+    "fuse.js": "^6.4.6",
     "parcel": "^2.0.0",
     "sass": "^1.43.2"
   },

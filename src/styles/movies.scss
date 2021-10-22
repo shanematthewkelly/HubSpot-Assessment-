@@ -15,6 +15,7 @@
     .radios {
       @include filter-common-flex(8px);
       margin-top: 20px;
+      gap: 10px;
     }
 
     .filters-block {
@@ -29,6 +30,18 @@
         justify-content: space-between;
         border-bottom: 3px solid lightgray;
         padding: 0 15px;
+        position: relative;
+        cursor: pointer;
+
+        a {
+          display: flex;
+          width: 100%;
+          align-items: center;
+        }
+
+        @media all and (max-width: $md) {
+          width: 100%;
+        }
 
         p {
           @include text-defaults($secondary-text, 16px);
@@ -36,15 +49,19 @@
       }
 
       .dropdown {
-        @include dropdown-defaults(white, 185px);
+        @include dropdown-defaults(white, 100%);
         position: absolute;
-        margin-top: 10px;
-        z-index: 10;
         border: $border-props;
+        max-height: 250px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        z-index: 10;
+        top: 100%;
+        left: 0;
 
         p {
           @include text-defaults($secondary-text, 16px);
-          margin-left: 20px;
+          margin-left: 10px;
         }
       }
 
@@ -54,6 +71,7 @@
         align-items: center;
         border-bottom: $border-props;
         padding: 0 15px;
+        cursor: pointer;
 
         &:hover {
           background-color: $dropdown-bg;
@@ -77,13 +95,13 @@
       h1 {
         @include text-defaults($primary, 18px);
         text-decoration: underline;
+        cursor: pointer;
       }
     }
   }
 
   .css-grid {
     display: grid;
-    overflow: hidden;
     padding: 30px 12px;
     gap: 1.5rem;
 
@@ -101,8 +119,15 @@
     }
 
     .movie-image {
+      // Provided explicit height with cover property
+      // for keeping image dimensions the same
       object-fit: cover;
       width: 100%;
+      height: 550px;
+
+      @media all and (max-width: $md) {
+        height: 100%;
+      }
     }
 
     h1 {
@@ -111,6 +136,7 @@
 
     p {
       font-weight: $font-weight;
+      text-transform: capitalize;
     }
   }
 }
